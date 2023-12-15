@@ -12,7 +12,6 @@ namespace FileReadingLibrary
     {
         private readonly string textFilePath = Resources.TextFile;
         private readonly string xmlFilePath = Resources.TestXML;
-        private readonly string jsonFilePath = Resources.JSONFile.ToString();
         public void RoleAccess(string role)
         {
             if (role == "Admin")
@@ -24,7 +23,7 @@ namespace FileReadingLibrary
                 xmlFileReader.ReadFile(xmlFilePath);
 
                 JSONFileReader jsonFileReader = new();
-                jsonFileReader.ReadFile(jsonFilePath);
+                jsonFileReader.ReadFile("Resources/JSONFile.json");
             }
             else if (role == "User")
             {
@@ -32,7 +31,7 @@ namespace FileReadingLibrary
                 textFileReader.ReadFile(textFilePath);
 
                 JSONFileReader jsonFileReader = new();
-                jsonFileReader.ReadFile(jsonFilePath);
+                jsonFileReader.ReadFile("Resources/JSONFile.json");
             }
             else
             {

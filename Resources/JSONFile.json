@@ -1,5 +1,6 @@
-{"employees":[
-  { "firstName":"John", "lastName":"Doe" },
-  { "firstName":"Anna", "lastName":"Smith" },
-  { "firstName":"Peter", "lastName":"Jones" }
-]}
+{
+  "key1": "value1",
+  "key2": 2,
+  "key5": true,
+  "key6": null
+}

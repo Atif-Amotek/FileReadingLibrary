@@ -15,6 +15,7 @@ namespace FileReadingLibrary
                 string decryptedText = Decrypt(text);
                 Console.WriteLine("File Content:");
                 Console.WriteLine(decryptedText);
+                Console.WriteLine();
                 return decryptedText;
             }
             else
