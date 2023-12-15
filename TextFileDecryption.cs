@@ -6,23 +6,25 @@ using System.Threading.Tasks;
 
 namespace FileReadingLibrary
 {
-    internal class TextFileEncryptor
+    internal class TextFileDecryption
     {
-        public void EncryptFile(string textFilePath)
+        public string DecryptFile(string text)
         {
-            if (textFilePath != null)
+            if (text != null)
             {
-                string encryptedText = Encrypt(textFilePath);
+                string decryptedText = Decrypt(text);
                 Console.WriteLine("File Content:");
-                Console.WriteLine(encryptedText);
+                Console.WriteLine(decryptedText);
+                return decryptedText;
             }
             else
             {
                 Console.WriteLine("File not found.");
+                return null;
             }
         }
 
-        private static string Encrypt(string text)
+        private static string Decrypt(string text)
         {
             char[] textArray = text.ToCharArray();
             Array.Reverse(textArray);

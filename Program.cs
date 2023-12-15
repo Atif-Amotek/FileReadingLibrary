@@ -12,22 +12,23 @@ class Program
         string xmlFilePath = Resources.TestXML;
         string encryptedTextFilePath = Resources.EncryptedTextFile;
 
-        TextFileReader textFileReader = new TextFileReader();
+        TextFileReader textFileReader = new();
         textFileReader.ReadFile(textFilePath);
 
-        XMLFileReader xmlFileReader = new XMLFileReader();
+        XMLFileReader xmlFileReader = new();
         xmlFileReader.ReadFile(xmlFilePath);
+        
+        TextFileEncryption textFileEncryptor = new();
+        string encryptedContent = textFileEncryptor.EncryptFile(encryptedTextFilePath);
 
-        TextFileEncryptor textFileEncryptor = new TextFileEncryptor();
-        string encrypted = textFileEncryptor.EncryptFile(encryptedTextFilePath);
-        Console.WriteLine(encryptedTextFilePath);
+        TextFileDecryption textFileDecryptor = new();
 
         Console.WriteLine("Do you need to read the Encrypted File");
         string answerEncryption = Console.ReadLine();
 
         if(answerEncryption == "yes")
         {
-
+            textFileDecryptor.DecryptFile(encryptedContent);
         }
         else
         {
