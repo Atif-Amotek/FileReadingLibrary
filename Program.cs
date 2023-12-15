@@ -9,16 +9,16 @@ class Program
     static void Main()
     {
 
-        TextFileEncryption textFileEncryptor = new();
-        TextFileDecryption textFileDecryptor = new();
+        FileEncryption fileEncryptor = new();
+        FileDecryption fileDecryptor = new();
         RoleBasedAccess roleBasedAccess = new();
 
         string encryptedTextFilePath = Resources.EncryptedTextFile;
-        string encryptedTextContent = textFileEncryptor.EncryptFile(encryptedTextFilePath);
+        string encryptedTextContent = fileEncryptor.EncryptFile(encryptedTextFilePath);
         string encryptedXMLFilePath = Resources.EncryptedXMLFile;
-        string encryptedXMLContent = textFileEncryptor.EncryptFile(encryptedXMLFilePath);
+        string encryptedXMLContent = fileEncryptor.EncryptFile(encryptedXMLFilePath);
         string encryptedJSONFilePath = Resources.EncryptedJSONFile.ToString();
-        string encryptedJSONContent = textFileEncryptor.EncryptFile(encryptedJSONFilePath);
+        string encryptedJSONContent = fileEncryptor.EncryptFile(encryptedJSONFilePath);
 
 
         Console.WriteLine("Do you need to read the Encrypted File");
@@ -29,9 +29,9 @@ class Program
 
         if(answerEncryption == "yes")
         {
-            textFileDecryptor.DecryptFile(encryptedTextContent);
-            textFileDecryptor.DecryptFile(encryptedXMLContent);
-            textFileDecryptor.DecryptFile(encryptedJSONContent);
+            fileDecryptor.DecryptFile(encryptedTextContent);
+            fileDecryptor.DecryptFile(encryptedXMLContent);
+            fileDecryptor.DecryptFile(encryptedJSONContent);
 
             if(role != null)
             {
