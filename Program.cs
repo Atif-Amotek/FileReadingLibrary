@@ -1,4 +1,5 @@
 ﻿using FileReadingLibrary;
+using FileReadingLibrary.Cypher;
 using FileReadingLibrary.Properties;
 using System;
 using System.IO;
@@ -11,14 +12,15 @@ class Program
 
         FileEncryption fileEncryptor = new();
         FileDecryption fileDecryptor = new();
+        JsonEncryption jsonEncryptor = new();
+        JsonDecryption jsonDecryptor = new();
         RoleBasedAccess roleBasedAccess = new();
 
         string encryptedTextFilePath = Resources.EncryptedTextFile;
         string encryptedTextContent = fileEncryptor.EncryptFile(encryptedTextFilePath);
         string encryptedXMLFilePath = Resources.EncryptedXMLFile;
         string encryptedXMLContent = fileEncryptor.EncryptFile(encryptedXMLFilePath);
-        string encryptedJSONFilePath = Resources.EncryptedJSONFile.ToString();
-        string encryptedJSONContent = fileEncryptor.EncryptFile(encryptedJSONFilePath);
+        string encryptedJSONContent= jsonEncryptor.EncryptFile("Resources/JSONFile?json");
 
 
         Console.WriteLine("Do you need to read the Encrypted File");
@@ -32,6 +34,7 @@ class Program
             fileDecryptor.DecryptFile(encryptedTextContent);
             fileDecryptor.DecryptFile(encryptedXMLContent);
             fileDecryptor.DecryptFile(encryptedJSONContent);
+            jsonDecryptor.DecryptFile(encryptedJSONContent);
 
             if(role != null)
             {
