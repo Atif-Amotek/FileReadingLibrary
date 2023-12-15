@@ -13,7 +13,7 @@ namespace FileReadingLibrary
             if (textFilePath != null)
             {
                 Console.WriteLine("File Content:");
-                Console.WriteLine(Resources.TextFile);
+                Console.WriteLine(textFilePath);
             }
             else
             {

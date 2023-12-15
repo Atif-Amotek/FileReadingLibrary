@@ -14,7 +14,7 @@ namespace FileReadingLibrary
             if (xmlFilePath != null)
             {
                 Console.WriteLine("XML Content:");
-                Console.WriteLine(Resources.TestXML);
+                Console.WriteLine(xmlFilePath);
             }
             else
             {
