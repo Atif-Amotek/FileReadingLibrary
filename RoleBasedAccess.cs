@@ -11,7 +11,7 @@ namespace FileReadingLibrary
     {
         private readonly string textFilePath = Resources.TextFile;
         private readonly string xmlFilePath = Resources.TestXML;
-        public void IsUserInRole(string role)
+        public void RoleAccess(string role)
         {
             if (role == "Admin")
             {
