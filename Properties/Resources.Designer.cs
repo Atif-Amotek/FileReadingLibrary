@@ -61,6 +61,16 @@ namespace FileReadingLibrary.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] EncryptedJSONFile {
+            get {
+                object obj = ResourceManager.GetObject("EncryptedJSONFile", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dit is een encrypted text file.
         /// </summary>
         internal static string EncryptedTextFile {

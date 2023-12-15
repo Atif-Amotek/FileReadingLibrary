@@ -17,6 +17,8 @@ class Program
         string encryptedTextContent = textFileEncryptor.EncryptFile(encryptedTextFilePath);
         string encryptedXMLFilePath = Resources.EncryptedXMLFile;
         string encryptedXMLContent = textFileEncryptor.EncryptFile(encryptedXMLFilePath);
+        string encryptedJSONFilePath = Resources.EncryptedJSONFile.ToString();
+        string encryptedJSONContent = textFileEncryptor.EncryptFile(encryptedJSONFilePath);
 
 
         Console.WriteLine("Do you need to read the Encrypted File");
@@ -29,6 +31,7 @@ class Program
         {
             textFileDecryptor.DecryptFile(encryptedTextContent);
             textFileDecryptor.DecryptFile(encryptedXMLContent);
+            textFileDecryptor.DecryptFile(encryptedJSONContent);
 
             if(role != null)
             {
