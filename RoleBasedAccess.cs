@@ -16,22 +16,24 @@ namespace FileReadingLibrary
         {
             if (role == "Admin")
             {
+                Console.WriteLine("Admin Access Granted");
                 TextFileReader textFileReader = new();
                 textFileReader.ReadFile(textFilePath);
 
                 XMLFileReader xmlFileReader = new();
                 xmlFileReader.ReadFile(xmlFilePath);
 
-                JSONFileReader jsonFileReader = new();
-                jsonFileReader.ReadFile("Resources/JSONFile.json");
+                JsonFileReader jsonFileReader = new();
+                jsonFileReader.ReadFile(Resources.JSONFile);
             }
             else if (role == "User")
             {
+                Console.WriteLine("User Access Granted");
                 TextFileReader textFileReader = new();
                 textFileReader.ReadFile(textFilePath);
 
-                JSONFileReader jsonFileReader = new();
-                jsonFileReader.ReadFile("Resources/JSONFile.json");
+                JsonFileReader jsonFileReader = new();
+                jsonFileReader.ReadFile(Resources.JSONFile);
             }
             else
             {

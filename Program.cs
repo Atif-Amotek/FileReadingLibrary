@@ -20,10 +20,10 @@ class Program
         string encryptedTextContent = fileEncryptor.EncryptFile(encryptedTextFilePath);
         string encryptedXMLFilePath = Resources.EncryptedXMLFile;
         string encryptedXMLContent = fileEncryptor.EncryptFile(encryptedXMLFilePath);
-        string encryptedJSONContent= jsonEncryptor.EncryptFile("Resources/JSONFile?json");
+        string encryptedJSONContent= jsonEncryptor.EncryptFile(Resources.EncryptedJSONFile);
 
 
-        Console.WriteLine("Do you need to read the Encrypted File");
+        Console.WriteLine("Do you need to read the Encrypted Files");
         string answerEncryption = Console.ReadLine();
 
         Console.WriteLine("Enter the Role");
@@ -31,10 +31,15 @@ class Program
 
         if(answerEncryption == "yes")
         {
+            Console.WriteLine("These are the Encrypted Files");
+            Console.WriteLine();
+            Console.WriteLine("This is a Text");
             fileDecryptor.DecryptFile(encryptedTextContent);
+            Console.WriteLine("This is a XML");
             fileDecryptor.DecryptFile(encryptedXMLContent);
-            fileDecryptor.DecryptFile(encryptedJSONContent);
+            Console.WriteLine("This is a JSON");   
             jsonDecryptor.DecryptFile(encryptedJSONContent);
+            Console.WriteLine();
 
             if(role != null)
             {

@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace FileReadingLibrary.FileReaders
 {
-    class JSONFileReader
+    class JsonFileReader
     {
-        public void ReadFile(string filePath)
+        public void ReadFile(byte[] filePath)
         {
-            string fileJSON = File.ReadAllText(filePath);
+            string fileJSON = Encoding.UTF8.GetString(filePath);
             var jsonObject = JsonSerializer.Deserialize<object>(fileJSON);
             Console.WriteLine("JSON Content:");
-            Console.WriteLine(jsonObject);
+            Console.WriteLine(jsonObject.ToString());
         }
     }
 }

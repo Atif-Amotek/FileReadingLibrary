@@ -9,12 +9,12 @@ namespace FileReadingLibrary.Cypher
 {
     internal class JsonEncryption
     {
-        public string? EncryptFile(string filePath)
+        public string? EncryptFile(byte[] file)
         {
-            if (filePath != null)
+            if (file != null)
             {
 
-                string fileJSON = File.ReadAllText(filePath);
+                string fileJSON = Encoding.UTF8.GetString(file);
                 var jsonObject = JsonSerializer.Deserialize<object>(fileJSON);
                 string encryptedJSON = Encrypt(jsonObject.ToString());
                 return encryptedJSON;

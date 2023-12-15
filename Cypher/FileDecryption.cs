@@ -8,20 +8,17 @@ namespace FileReadingLibrary
 {
     internal class FileDecryption
     {
-        public string DecryptFile(string text)
+        public void DecryptFile(string text)
         {
             if (text != null)
             {
                 string decryptedText = Decrypt(text);
-                Console.WriteLine("File Content:");
                 Console.WriteLine(decryptedText);
                 Console.WriteLine();
-                return decryptedText;
             }
             else
             {
                 Console.WriteLine("File not found.");
-                return null;
             }
         }
 

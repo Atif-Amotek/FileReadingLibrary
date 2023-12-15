@@ -9,19 +9,17 @@ namespace FileReadingLibrary.Cypher
 {
     internal class JsonDecryption
     {
-        public string DecryptFile(string filePath)
+        public void DecryptFile(string text)
         {
-            if (filePath != null)
+            if (text != null)
             {
-                string fileJSON = File.ReadAllText(filePath);
-                var jsonObject = JsonSerializer.Deserialize<object>(fileJSON);
-                string encryptedJSON = Decrypt(jsonObject.ToString());
-                return encryptedJSON;
+                string fileJSON = text;
+                string decryptedJSON = Decrypt(fileJSON);
+                Console.WriteLine(decryptedJSON);
             }
             else
             {
                 Console.WriteLine("File not found.");
-                return null;
             }
         }
 
