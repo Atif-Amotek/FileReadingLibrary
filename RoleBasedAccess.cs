@@ -26,6 +26,10 @@ namespace FileReadingLibrary
                 TextFileReader textFileReader = new();
                 textFileReader.ReadFile(textFilePath);
             }
+            else
+            {
+                throw new ArgumentException("Invalid Role: Can't Read Files", nameof(role));
+            }
         }
     }
 }
