@@ -8,31 +8,42 @@ class Program
 {
     static void Main()
     {
-        string textFilePath = Resources.TextFile;
-        string xmlFilePath = Resources.TestXML;
-        string encryptedTextFilePath = Resources.EncryptedTextFile;
 
-        TextFileReader textFileReader = new();
-        textFileReader.ReadFile(textFilePath);
-
-        XMLFileReader xmlFileReader = new();
-        xmlFileReader.ReadFile(xmlFilePath);
-        
         TextFileEncryption textFileEncryptor = new();
-        string encryptedContent = textFileEncryptor.EncryptFile(encryptedTextFilePath);
-
         TextFileDecryption textFileDecryptor = new();
+        RoleBasedAccess roleBasedAccess = new();
+
+        string encryptedTextFilePath = Resources.EncryptedTextFile;
+        string encryptedContent = textFileEncryptor.EncryptFile(encryptedTextFilePath);
 
         Console.WriteLine("Do you need to read the Encrypted File");
         string answerEncryption = Console.ReadLine();
 
+        Console.WriteLine("Enter the Role");
+        string role = Console.ReadLine();
+
         if(answerEncryption == "yes")
         {
             textFileDecryptor.DecryptFile(encryptedContent);
+            if(role != null)
+            {
+                roleBasedAccess.RoleAccess(role);
+            }
+            else
+            {
+                throw new ArgumentNullException(nameof(role), "Input cannot be null.");
+            }
         }
         else
         {
-            Console.WriteLine("Ok, bye");
+            if (role != null)
+            {
+                roleBasedAccess.RoleAccess(role);
+            }
+            else
+            {
+                throw new ArgumentNullException(nameof(role), "Input cannot be null.");
+            }
         }
 
     }
