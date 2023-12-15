@@ -8,14 +8,12 @@ namespace FileReadingLibrary
 {
     internal class TextFileEncryption
     {
-        public string EncryptFile(string textFilePath)
+        public string? EncryptFile(string filePath)
         {
-            if (textFilePath != null)
+            if (filePath != null)
             {
-                string encryptedText = Encrypt(textFilePath);
-                Console.WriteLine("File Content:");
-                Console.WriteLine(encryptedText);
-                return encryptedText;
+                string encryptedFile = Encrypt(filePath);
+                return encryptedFile;
             }
             else
             {
@@ -24,7 +22,7 @@ namespace FileReadingLibrary
             }
         }
 
-        public string DecryptFile(string text)
+        public string? DecryptFile(string text)
         {
             if (text != null)
             {

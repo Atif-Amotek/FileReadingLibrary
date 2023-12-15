@@ -14,7 +14,10 @@ class Program
         RoleBasedAccess roleBasedAccess = new();
 
         string encryptedTextFilePath = Resources.EncryptedTextFile;
-        string encryptedContent = textFileEncryptor.EncryptFile(encryptedTextFilePath);
+        string encryptedTextContent = textFileEncryptor.EncryptFile(encryptedTextFilePath);
+        string encryptedXMLFilePath = Resources.EncryptedXMLFile;
+        string encryptedXMLContent = textFileEncryptor.EncryptFile(encryptedXMLFilePath);
+
 
         Console.WriteLine("Do you need to read the Encrypted File");
         string answerEncryption = Console.ReadLine();
@@ -24,7 +27,9 @@ class Program
 
         if(answerEncryption == "yes")
         {
-            textFileDecryptor.DecryptFile(encryptedContent);
+            textFileDecryptor.DecryptFile(encryptedTextContent);
+            textFileDecryptor.DecryptFile(encryptedXMLContent);
+
             if(role != null)
             {
                 roleBasedAccess.RoleAccess(role);

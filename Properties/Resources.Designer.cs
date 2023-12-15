@@ -72,6 +72,21 @@ namespace FileReadingLibrary.Properties {
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
         ///&lt;note&gt;
+        ///  &lt;to&gt;Ordina&lt;/to&gt;
+        ///  &lt;from&gt;Atif&lt;/from&gt;
+        ///  &lt;heading&gt;Sollicitatie&lt;/heading&gt;
+        ///  &lt;body&gt;.NET Traineeship&lt;/body&gt;
+        ///&lt;/note&gt;.
+        /// </summary>
+        internal static string EncryptedXMLFile {
+            get {
+                return ResourceManager.GetString("EncryptedXMLFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;note&gt;
         ///  &lt;to&gt;Tove&lt;/to&gt;
         ///  &lt;from&gt;Jani&lt;/from&gt;
         ///  &lt;heading&gt;Reminder&lt;/heading&gt;
