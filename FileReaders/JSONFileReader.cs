@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace FileReadingLibrary.FileReaders
 {
-    internal class JSONFileReader : IFileReader
+    class JSONFileReader : IFileReader
     {
-        void IFileReader.ReadFile(string filePath)
+        public void ReadFile(string filePath)
         {
-            if(filePath != null)
+            if (filePath != null)
             {
                 Console.WriteLine("File Content:");
                 Console.WriteLine(filePath);
@@ -18,6 +18,7 @@ namespace FileReadingLibrary.FileReaders
             else
             {
                 Console.WriteLine("File not found.");
+            }
         }
     }
 }
