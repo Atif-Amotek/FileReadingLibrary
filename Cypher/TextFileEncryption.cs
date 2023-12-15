@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FileReadingLibrary
 {
-    internal class TextFileEncryptor
+    internal class TextFileEncryption
     {
         public string EncryptFile(string textFilePath)
         {
