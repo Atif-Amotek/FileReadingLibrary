@@ -85,6 +85,16 @@ namespace FileReadingLibrary.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] JSONFile {
+            get {
+                object obj = ResourceManager.GetObject("JSONFile", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
         ///&lt;note&gt;
         ///  &lt;to&gt;Tove&lt;/to&gt;
