@@ -15,7 +15,6 @@ namespace FileReadingLibrary.FileReaders
             var jsonObject = JsonSerializer.Deserialize<object>(fileJSON);
             Console.WriteLine("JSON Content:");
             Console.WriteLine(jsonObject);
-            //return JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions { WriteIndented = true });
         }
     }
 }
