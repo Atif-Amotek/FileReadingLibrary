@@ -7,12 +7,16 @@ class Program
 {
     static void Main()
     {
-        string filePath = Resources.TextFile;
+        string textFilePath = Resources.TextFile;
+        string xmlFilePath = Resources.TestXML;
 
-        if (filePath != null)
+        if (textFilePath != null && xmlFilePath != null)
         {
             Console.WriteLine("File Content:");
             Console.WriteLine(Resources.TextFile);
+
+            Console.WriteLine("XML Content:");
+            Console.WriteLine(Resources.TestXML);
         }
         else
         {

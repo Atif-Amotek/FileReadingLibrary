@@ -61,6 +61,21 @@ namespace FileReadingLibrary.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;note&gt;
+        ///  &lt;to&gt;Tove&lt;/to&gt;
+        ///  &lt;from&gt;Jani&lt;/from&gt;
+        ///  &lt;heading&gt;Reminder&lt;/heading&gt;
+        ///  &lt;body&gt;Don&apos;t forget me this weekend!&lt;/body&gt;
+        ///&lt;/note&gt;.
+        /// </summary>
+        internal static string TestXML {
+            get {
+                return ResourceManager.GetString("TestXML", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hallo ik ben atif.
         /// </summary>
         internal static string TextFile {
