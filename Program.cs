@@ -1,4 +1,5 @@
-﻿using FileReadingLibrary.Properties;
+﻿using FileReadingLibrary;
+using FileReadingLibrary.Properties;
 using System;
 using System.IO;
 using System.Resources;
@@ -9,18 +10,29 @@ class Program
     {
         string textFilePath = Resources.TextFile;
         string xmlFilePath = Resources.TestXML;
+        string encryptedTextFilePath = Resources.EncryptedTextFile;
 
-        if (textFilePath != null && xmlFilePath != null)
+        TextFileReader textFileReader = new TextFileReader();
+        textFileReader.ReadFile(textFilePath);
+
+        XMLFileReader xmlFileReader = new XMLFileReader();
+        xmlFileReader.ReadFile(xmlFilePath);
+
+        TextFileEncryptor textFileEncryptor = new TextFileEncryptor();
+        string encrypted = textFileEncryptor.EncryptFile(encryptedTextFilePath);
+        Console.WriteLine(encryptedTextFilePath);
+
+        Console.WriteLine("Do you need to read the Encrypted File");
+        string answerEncryption = Console.ReadLine();
+
+        if(answerEncryption == "yes")
         {
-            Console.WriteLine("File Content:");
-            Console.WriteLine(Resources.TextFile);
 
-            Console.WriteLine("XML Content:");
-            Console.WriteLine(Resources.TestXML);
         }
         else
         {
-            Console.WriteLine("File not found.");
+            Console.WriteLine("Ok, bye");
         }
+
     }
 }

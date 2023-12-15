@@ -61,6 +61,15 @@ namespace FileReadingLibrary.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dit is een encrypted text file.
+        /// </summary>
+        internal static string EncryptedTextFile {
+            get {
+                return ResourceManager.GetString("EncryptedTextFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
         ///&lt;note&gt;
         ///  &lt;to&gt;Tove&lt;/to&gt;
